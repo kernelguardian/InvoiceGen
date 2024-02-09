@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>A simple, clean, and responsive HTML invoice template</title>
+
+    <style>
+        #headingbg {
+            background-color: #7b0c0c;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .empty-div {
+            flex-grow: 1;
+            /* Grow to fill remaining space */
+        }
+
+        .invoice-box {
+            max-width: 800px;
+            margin: auto;
+            padding: 30px;
+            border: 1px solid #eee;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+            font-size: 16px;
+            line-height: 24px;
+            font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif;
+            color: #555;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        #footer {
+            background-color: #5eb451;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+
+        .invoice-box table {
+            width: 100%;
+            line-height: inherit;
+            text-align: left;
+        }
+
+        .invoice-box table td {
+            padding: 5px;
+            vertical-align: top;
+        }
+
+        .invoice-box table tr td:nth-child(2) {
+            text-align: right;
+        }
+
+        .invoice-box table tr.top table td {
+            padding-bottom: 20px;
+        }
+
+        .invoice-box table tr.top table td.title {
+            font-size: 45px;
+            line-height: 45px;
+            color: #333;
+        }
+
+        .invoice-box table tr.information table td {
+            padding-bottom: 40px;
+        }
+
+        .invoice-box table tr.heading td {
+            background: #5eb451;
+            border-bottom: 1px solid #ddd;
+            font-weight: bold;
+            color: white;
+        }
+
+        .invoice-box table tr.details td {
+            padding-bottom: 20px;
+        }
+
+        .invoice-box table tr.item td {
+            border-bottom: 1px solid #eee;
+        }
+
+        .invoice-box table tr.item.last td {
+            border-bottom: none;
+        }
+
+        .invoice-box table tr.total td:nth-child(2) {
+            border-top: 2px solid #eee;
+            font-weight: bold;
+        }
+
+        @media only screen and (max-width: 600px) {
+            .invoice-box table tr.top table td {
+                width: 100%;
+                display: block;
+                text-align: center;
+            }
+
+            .invoice-box table tr.information table td {
+                width: 100%;
+                display: block;
+                text-align: center;
+            }
+        }
+
+        /** RTL **/
+        .invoice-box.rtl {
+            direction: rtl;
+            font-family: Tahoma, 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif;
+        }
+
+        .invoice-box.rtl table {
+            text-align: right;
+        }
+
+        .invoice-box.rtl table tr td:nth-child(2) {
+            text-align: left;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="invoice-box">
+        <table cellpadding="0" cellspacing="0">
+            <tr class="top">
+                <td colspan="2">
+                    <table>
+                        <tr>
+                            <td class="title">
+                                <a href="https://grocerhut.co.uk/"><img src="logo.png"
+                                        style="width: 100%; max-width: 120px; " /></a>
+                            </td>
+
+                            <td>
+                                Invoice#: G1001<br />
+                                Created: 2021-06-01<br />
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+
+            <tr class="information">
+                <td colspan="2">
+                    <table>
+                        <tr>
+                            <td>
+                                Grocerhut Ltd<br />
+                                Unit 2,
+                                Linton House<br />
+                                Shaddongate,
+                                Carlisle<br />
+                                CA2 5TL
+                            </td>
+
+                            <td>
+                                Abhilash<br />
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+
+
+
+            <tr class="heading" id="headingbg">
+                <td>Item</td>
+
+                <td>Price</td>
+            </tr>
+
+            <tr class="item">
+                <td>G_Item_NAME</td>
+
+                <td>G_Item_Price</td>
+            </tr>
+
+             <tr class="item">
+                <td>Ayila / Mackarel ( 1.0 x 14.45 )</td>
+
+                <td> 14.45</td>
+            </tr>
+             <tr class="item">
+                <td>King Fish / Neymeen ( 1.24 x 29.521919999999998 )</td>
+
+                <td> 36.607180799999995</td>
+            </tr>
+            G_ITEM_ROW
+
+
+
+            <tr class="total">
+                <td></td>
+
+                <td>Total: G_TOT_Price</td>
+            </tr>
+
+            <tr>
+
+
+                <td style="width: 65%;">
+                    </br>
+                    <p>Thank you for shopping with us. Please make the payment via bank transfer with the below details
+                    </p>
+
+                </td>
+                <td>
+                    </br>
+
+                    <h2 style="padding: 0%;margin: 0%; padding-bottom: 6px;">Bank Details</h2>
+                    Bank Name: Virgin Money</br>
+                    Account Name: Grocerhut Ltd</br>
+                    Account Number: 12345678</br>
+                    Sort Code: 12-34-56</br>
+                    Reference: cname_id
+                </td>
+
+            </tr>
+
+            <tr>
+                <td>
+                    <h2 style="padding: 0%;margin: 0%; padding-bottom: 6px;">Customer Support</h2>
+                    <!-- Call us for any support or queries</br> -->
+                    <!-- <b>Jinson George</b></br> -->
+                    +44 7518 871037</br>
+                    <a style="color: inherit; text-decoration-line: none;"
+                        href="mailto:help@grocerhut.co.uk">help@grocerhut.co.uk</a> </br>
+                    <a style="color: inherit; text-decoration-line: none;"
+                        href="https://grocerhut.co.uk/">www.grocerhut.co.uk</a>
+                    </br>
+                    <a style="color: inherit; text-decoration-line: none;" href="https://asish.page.link/fish"><img
+                            src="qr code.png" style="width: 100%; max-width: 120px; " /></a>
+                </td>
+
+
+            </tr>
+
+
+        </table>
+        <div class="empty-div"></div>
+
+        <!-- <hr> -->
+        <div id="footer"
+            style="background-color: #5eb451; width: 100%; color: white; align-items: center; text-align: center; padding: 2px">
+            <h3 style="padding: 0%;margin: 0%;">Grocerhut bringing the best to you</h3>
+            <p style="padding-top: 0%;margin: 0%;">Unit 2, Linton House, Shaddongate, Carlisle, CA2 5TL </br>
+                +44 7518 871037 <span style="padding-left: 4px; padding-right: 4px;"><a
+                        style="color: inherit; text-decoration-line: none;"
+                        href="mailto:help@grocerhut.co.uk">help@grocerhut.co.uk</a> </span>
+                <span style="padding-left: 4px; padding-right: 4px;"><a
+                        style="color: inherit; text-decoration-line: none;"
+                        href="https://grocerhut.co.uk/">www.grocerhut.co.uk</a></span>
+            </p>
+
+
+        </div>
+    </div>
+</body>
+
+</html>
